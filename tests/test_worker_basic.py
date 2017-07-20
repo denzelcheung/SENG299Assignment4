@@ -51,7 +51,16 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
-
+    def test_duplicate_adds2(self):
+        worker2 = None
+        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+        
+        list2 = ["test.com", "test.com"]
+        lenBefore = len(worker2.to_crawl)
+        worker2.add_links(list2)
+        lenAfter = len(worker2.to_crawl)
+        self.assertEqual(lenBefore + 1, lenAfter)
+ 
 
 
 
@@ -64,15 +73,4 @@ class TestWorkerBasic(unittest.TestCase):
         worker3.add_links(list3)
         lenAfter = len(worker3.to_crawl)
         self.assertEqual(lenBefore + 1, lenAfter)
-
-
-    def test_adding_links(self):
-        worker2 = None
-        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-
-        list2 = ["test.com"]
-        len_should_be = len(worker2.to_crawl) + 1
-        worker2.add_links("test.com")
-        len_real = len(worker2.to_crawl)
-
-        self.assertEqual(len_should_be, len_real)
+ 
