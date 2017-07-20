@@ -66,7 +66,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker3.add_links("test.com")
         worker3.add_links("test.com")
         worker3.add_links("test.com")
-        links = len(worker3.to_crawl)
+        links = worker3.to_crawl
         self.assertEqual(links, 1)
 
 
