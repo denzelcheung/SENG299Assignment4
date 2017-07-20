@@ -52,15 +52,15 @@ class TestWorkerBasic(unittest.TestCase):
 
 
         
-    def test_adding_links(self):
-        worker2 = None
-        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-        
-        list2 = ["uvic.ca", "ubc.ca", "sfu.ca", "uvi.ca", "royalroads.ca"]
-        lenShouldBe = len(worker2.to_crawl) + len(list2)
-        worker2.add_links(list2)
-        lenReal = len(worker2.to_crawl)
-        self.assertEqual(lenShouldBe, lenReal)
+#    def test_adding_links(self):
+#        worker2 = None
+#       worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+#        
+#        list2 = ["uvic.ca", "ubc.ca", "sfu.ca", "uvi.ca", "royalroads.ca"]
+#        lenShouldBe = len(worker2.to_crawl) + len(list2)
+#        worker2.add_links(list2)
+#        lenReal = len(worker2.to_crawl)
+#        self.assertEqual(lenShouldBe, lenReal)
 
        
     def test_duplicate_adds(self):
