@@ -60,7 +60,7 @@ class TestWorkerBasic(unittest.TestCase):
         lenShouldBe = len(worker2.to_crawl) + len(list2)
         worker2.add_links(list2)
         lenReal = len(worker2.to_crawl)
-        self.Equals(lenShouldBe, lenReal)
+        self.assertEqual(lenShouldBe, lenReal)
 
        
     def test_duplicate_adds(self):
