@@ -4,6 +4,7 @@ import codecs
 import os
 
 from workers.basic_worker import BasicUserParseWorker
+from workers.basic_worker import WorkerException
 
 
 class TestWorkerBasic(unittest.TestCase):
