@@ -53,7 +53,7 @@ class TestWorkerBasic(unittest.TestCase):
     
     def test_garbled_link(self):
         worker = None
-        worker = VasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+        worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         worker.add_links("seng299.cheese")
         self.assertRaises(WorkerException, worker.run)
         
