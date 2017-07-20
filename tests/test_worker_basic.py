@@ -57,14 +57,7 @@ class TestWorkerBasic(unittest.TestCase):
 #        
 #        worker2.add_links("test.com")
 #        self.assertRaises(WorkerExeception, worker2.run)
-    
-    def test_garbage_link(self):
-        worker = None
-        worker = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-        worker.max_links = 10
-        worker.add_links("asdasfsd")
 
-        self.assertRaises(WorkerException, worker.run)
        
     def test_duplicate_adds(self):
         worker3 = None
