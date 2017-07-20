@@ -56,7 +56,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         
         worker2.add_links("test.com")
-        self.assertRaises(IOError, worker2.run)
+        self.assertRaises(WorkerExeception, worker2.run)
 
        
     def test_duplicate_adds(self):
