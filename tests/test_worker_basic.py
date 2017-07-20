@@ -51,16 +51,12 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
-#    def test_cur_links(self):
-#        worker2 = None
-#        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-#        
-#        test = ["test.com", "test2.com"]
-#        for i in test:
-#            worker2.add_links(i)
-#        
-#        current_links = worker2.cur_links
-#        self.assertEqual(current_links, len(test))
+    def test_IO_error(self):
+        worker2 = None
+        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+        
+        worker2.add_links("test.com")
+        self.assertRaise(IOError, worker2.run)
 
        
     def test_duplicate_adds(self):
