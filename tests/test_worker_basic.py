@@ -63,7 +63,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker3 = None
         worker3 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         
-        list = ["test.com", "test.com"]
+        list1 = ["test.com", "test.com"]
         lenBefore = len(worker3.to_crawl)
         worker3.add_links(list1)
         lenAfter = len(worker3.to_crawl)
