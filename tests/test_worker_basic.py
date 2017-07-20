@@ -71,7 +71,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
 
         list2 = ["test.com"]
-        len_should_be = len(worker2.to_crawl) + len(list2)
+        len_should_be = len(worker2.to_crawl) + 1)
         worker2.add_links("test.com")
         len_real = len(worker2.to_crawl)
 
