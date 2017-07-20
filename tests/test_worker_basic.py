@@ -63,7 +63,7 @@ class TestWorkerBasic(unittest.TestCase):
 #        self.assertEqual(current_links, len(test))
 
        
-    def test_duplicate_adds(self)
+    def test_duplicate_adds(self):
         worker3 = None
         worker3 = BasicUserParseWorker("https://reddit.com/user/Chrikelnel")
         
