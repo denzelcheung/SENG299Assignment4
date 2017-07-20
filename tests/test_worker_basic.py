@@ -61,7 +61,7 @@ class TestWorkerBasic(unittest.TestCase):
        
     def test_duplicate_adds(self):
         worker3 = None
-        worker3 = BasicUserParseWorker("https://reddit.com/user/Chrikelnel")
+        worker3 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         
         worker3.add_links("test.com")
         worker3.run()
