@@ -63,9 +63,9 @@ class TestWorkerBasic(unittest.TestCase):
         worker3 = None
         worker3 = BasicUserParseWorker("https://reddit.com/user/Chrikelnel")
         
-        test = ["test.com", "test.com", "test.com"]
-        for i in test:
-               worker3.add_links(i)
+        worker3.add_links("test.com")
+        worker3.add_links("test.com")
+        worker3.add_links("test.com")
         links = len(worker3.to_crawl)
         self.assertEqual(links, 1)
 
