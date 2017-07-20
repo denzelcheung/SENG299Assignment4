@@ -51,19 +51,23 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
-#    def test_IO_error(self):
-#        worker2 = None
-#        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
-#        
-#        worker2.add_links("test.com")
-#        self.assertRaises(WorkerExeception, worker2.run)
+        
+    def test_adding_links(self):
+        worker2 = None
+        worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+        
+        list2 = ["uvic.ca", "ubc.ca", "sfu.ca", "uvi.ca", "royalroads.ca"]
+        lenShouldBe = len(worker2.to_crawl + len(list2))
+        worker2.add_links(list2)
+        lenReal = len(worker2.to_crawl)
+        self.Equals(lenShouldBe, lenReal)
 
        
     def test_duplicate_adds(self):
         worker3 = None
         worker3 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         
-        list1 = ["test.com", "test.com"]
+        list3 = ["test.com", "test.com"]
         lenBefore = len(worker3.to_crawl)
         worker3.add_links(list1)
         lenAfter = len(worker3.to_crawl)
