@@ -51,15 +51,15 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
-    def test_adds2(self):
+    def test_duplicate_adds2(self):
         worker2 = None
         worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         
-        list2 = ["test.com", "test.com"]
-        lenBefore = len(worker2.to_crawl)
+        list2 = ["uvic", "ubc", "sfu"]
+        lenBefore = len(worker2.to_crawl) + len(list2)
         worker2.add_links(list2)
         lenAfter = len(worker2.to_crawl)
-        self.assertEqual(lenBefore + 1, lenAfter)
+        self.assertEqual(lenBefore, lenAfter)
  
 
 
