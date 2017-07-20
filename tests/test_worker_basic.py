@@ -50,7 +50,14 @@ class TestWorkerBasic(unittest.TestCase):
 
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
-
+    
+    def test_garbled_link(self):
+        worker = None
+        worker = VasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
+        worker.add_links("seng299.cheese")
+        self.assertRaises(WorkerException, worker.run)
+        
+        
     def test_worker_add(self):
         worker2 = None
         worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
@@ -60,7 +67,6 @@ class TestWorkerBasic(unittest.TestCase):
         worker2.add_links(list2)
         lenAfter = len(worker2.to_crawl)
         self.assertEqual(lenBefore, lenAfter)
- 
 
 
 
