@@ -51,9 +51,16 @@ class TestWorkerBasic(unittest.TestCase):
         self.assertEqual(len_to_crawl_after, len_to_crawl_before)
 
 
-
-
-
+    def test_worker_duplicate(self):
+        worker2 = None
+        worker2 = BasicUserParseWorker("https.//www.redit.com/user/Chrikelnel")
+        
+        test = ["test.com", "test2.com"]
+        for i in test:
+            worker.add_links(i)
+        
+        current_links = worker.cur_links
+        self.assertEqual(current_links, len(test))
 
 
 
