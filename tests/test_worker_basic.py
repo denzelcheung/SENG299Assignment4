@@ -69,7 +69,7 @@ class TestWorkerBasic(unittest.TestCase):
         
         list3 = ["test.com", "test.com"]
         lenBefore = len(worker3.to_crawl)
-        worker3.add_links(list1)
+        worker3.add_links(list3)
         lenAfter = len(worker3.to_crawl)
         self.assertEqual(lenBefore + 1, lenAfter)
 
