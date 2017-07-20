@@ -57,7 +57,7 @@ class TestWorkerBasic(unittest.TestCase):
         
         test = ["test.com", "test2.com"]
         for i in test:
-            worker.add_links(i)
+            worker2.add_links(i)
         
         current_links = worker2.cur_links
         self.assertEqual(current_links, len(test))
