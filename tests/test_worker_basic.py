@@ -57,7 +57,7 @@ class TestWorkerBasic(unittest.TestCase):
         worker2 = BasicUserParseWorker("https://www.reddit.com/user/Chrikelnel")
         
         list2 = ["uvic.ca", "ubc.ca", "sfu.ca", "uvi.ca", "royalroads.ca"]
-        lenShouldBe = len(worker2.to_crawl + len(list2))
+        lenShouldBe = len(worker2.to_crawl) + len(list2))
         worker2.add_links(list2)
         lenReal = len(worker2.to_crawl)
         self.Equals(lenShouldBe, lenReal)
